@@ -59,15 +59,6 @@ def editOne(name):
 	langs = [language for language in languages if language['name'] == name]
 	langs[0]['name'] = request.json['name']
 	return jsonify({'language' : langs[0]})
-#def remove(name):
-#	lang = [language for language in languages if language['name'] == name]
-#	languages.remove(lang[0])
-#	return jsonify({'languages' : languages})
-#def add():
-#	language = {'name' : request.json['name']}
-
-#	languages.append(language)
-#	return jsonify({'languages' : languages})
 
 @swag_from("docs/lang05.yml", methods=["DELETE"])
 @app.route('/lang/<string:name>', methods=['DELETE'])
